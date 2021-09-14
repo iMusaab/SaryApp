@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var bannerViewModel = BannerViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
+        ForEach(bannerViewModel.banners, id: \.self) { banner in
+            Text("\(banner.id)")
+        }
             .padding()
+            .onAppear {
+                bannerViewModel.getBanners()
+            }
     }
 }
 
