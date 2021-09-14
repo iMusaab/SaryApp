@@ -6,12 +6,18 @@ PODS:
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageSwiftUI (2.0.2):
+    - SDWebImage (~> 5.10)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - RxCocoa
   - RxSwift
+  - SDWebImageSwiftUI
   - SwiftyJSON
 
 SPEC REPOS:
@@ -20,6 +26,8 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
+    - SDWebImageSwiftUI
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -27,8 +35,10 @@ SPEC CHECKSUMS:
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: c550214a29a8e74ef96f7014dbc0783fbd795951
+PODFILE CHECKSUM: 0c04558959d3eaafad725aedb285566401a4425d
 
 COCOAPODS: 1.10.1

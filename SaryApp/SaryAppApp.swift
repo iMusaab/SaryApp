@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SaryAppApp: App {
+    @State static var showHUD = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(showToast: SaryAppApp.$showHUD)
         }
     }
 }

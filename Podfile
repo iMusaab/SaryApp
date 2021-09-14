@@ -10,6 +10,8 @@ target 'SaryApp' do
     
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    
+    pod ‘SDWebImageSwiftUI’
 
   # Pods for SaryApp
 
