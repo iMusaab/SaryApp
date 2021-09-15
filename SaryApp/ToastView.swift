@@ -16,45 +16,57 @@ struct ToastView: View {
         VStack {
             HStack {
                 Text(banner.description)
+                    .font(.callout)
             }
+            .padding(.horizontal)
             HStack {
                 Button(action: {
-                    openURL(URL(string: banner.link)!)
+//                    openURL(URL(string: banner.link)!)
                     
                 }, label: {
                     HStack {
-                        Image(systemName: "arrow.up.backward")
-                            .foregroundColor(Color(#colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)))
-                            .font(.system(size: 12))
-                        Text("اطلب!")
+                        // The link doesnt work so i just showed it
+                        Text(banner.link)
                             .lineLimit(1)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.black)
                     }
                             .padding(.vertical, 8)
-                            .padding(.horizontal, 5)
-                            .frame(width: 20)
+                    .frame(width: UIScreen.main.bounds.width / 1.75)
                             .background(Color.white)
                             .cornerRadius(35)
                             .shadow(color: Color(#colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)).opacity(0.2), radius: 10, x: 0, y: 6)
                         
                     
-                }).padding(.trailing, 10)
+                })
+            }
+            .padding(.vertical)
+            
+            HStack {
+                Button(action: {
+                    withAnimation {
+                                    self.show = false
+                                }
+                }, label: {
+                    Image(systemName: "xmark.circle" )
+                        .foregroundColor(Color(#colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)))
+                        .font(.system(size: 20, weight: .medium))
+                        .padding(5)
+                })
+                
+                    
             }
         }
         .frame(width: UIScreen.main.bounds.width / 1.25)
+        .padding(.vertical, 40)
+        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.4549019608, green: 0.9490196078, blue: 0.8078431373, alpha: 1)), Color(#colorLiteral(red: 0.4862745098, green: 1, blue: 0.7960784314, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+        .cornerRadius(30)
         .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity))
         .onTapGesture {
             withAnimation {
                 self.show = false
             }
-        }.onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    self.show = false
-                }
-            }
-        })
+        }
     }
 }
 
@@ -82,6 +94,6 @@ extension View {
 struct ToastView_Previews: PreviewProvider {
     @State static var show = false
     static var previews: some View {
-        ToastView(show: $show, banner: BannerResult(id: 1, title: "d", description: " مجاني. استخدم كود الخصم: Hala", button_text: "اطلب الان ⬅️", expiry_status: false, created_at: "", start_date: "", expiry_date: "", image: "", priority: 1, photo: "", link: "sary://sary.com/discount?promocode=hala", level: "", is_available: false, branch: 1))
+        ToastView(show: $show, banner: exampleBanner)
     }
 }
