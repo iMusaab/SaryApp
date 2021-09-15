@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 
+
+// MARK: - The first API didn't return any data in result So I created this to read from the json response
 public class BannerJSON {
     @Published var banners = [BannerResult]()
     
@@ -32,10 +34,11 @@ public class BannerJSON {
     }
 }
 
-class CatalogApi : ObservableObject{
+// MARK: - This Class is created to read from the API .. for the banner the result was empty
+class Api : ObservableObject{
     @Published var bannerModel = BannerModel.self
     
-    func loadData(completion:@escaping (BannerModel) -> ()) {
+    func loadCatalogData(completion:@escaping (BannerModel) -> ()) {
         
         let url = "https://staging.sary.co/api/baskets/76097/catalog/"
         let headers: HTTPHeaders = [
@@ -51,6 +54,7 @@ class CatalogApi : ObservableObject{
             case .success(let value):
                 print("\(value)")
                 do {
+                    
                     let decoder = JSONDecoder()
 //                    let data = try decoder.decode(BannerModel.self, from: value)
 //                    print(data)
@@ -63,15 +67,11 @@ class CatalogApi : ObservableObject{
         }
         
     }
-}
-
-// This class returned empty values for result
-class BannerAPI : ObservableObject{
-    @Published var bannerModel = BannerModel.self
     
-    func loadData(completion:@escaping (BannerModel) -> ()) {
+    // This function returned empty values from result
+    func loadBannerData(completion:@escaping (BannerModel) -> ()) {
         
-        let url = "https://staging.sary.co/api/baskets/76097/catalog/"
+        let url = "https://staging.sary.co/api/v2.5.1/baskets/76097/banners/"
         let headers: HTTPHeaders = [
             "Device-Type": "android",
             "App-Version": "3.1.1.0.0",

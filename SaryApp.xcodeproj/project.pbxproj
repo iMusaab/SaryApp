@@ -19,6 +19,7 @@
 		D6A4A40E26F1447200E9F13E /* JsonForBanner.json in Resources */ = {isa = PBXBuildFile; fileRef = D6A4A40C26F136DC00E9F13E /* JsonForBanner.json */; };
 		D6A4A41226F1626600E9F13E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41126F1626600E9F13E /* ToastView.swift */; };
 		D6A4A41426F1754C00E9F13E /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41326F1754C00E9F13E /* BannerView.swift */; };
+		D6A4A41826F1791C00E9F13E /* CatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41726F1791C00E9F13E /* CatalogModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D6A4A40C26F136DC00E9F13E /* JsonForBanner.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonForBanner.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D6A4A41126F1626600E9F13E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		D6A4A41326F1754C00E9F13E /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D6A4A41726F1791C00E9F13E /* CatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,11 @@
 		D6A4A3F426EFB93900E9F13E /* SaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				D6A4A41626F1765500E9F13E /* Manager */,
 				D6A4A40626EFC9C500E9F13E /* Model */,
 				D6A4A40726EFC9D100E9F13E /* ViewModel */,
-				D6A4A40A26EFCDDD00E9F13E /* APIManager.swift */,
+				D6A4A41526F1763800E9F13E /* View */,
 				D6A4A3F526EFB93900E9F13E /* SaryAppApp.swift */,
-				D6A4A41126F1626600E9F13E /* ToastView.swift */,
-				D6A4A41326F1754C00E9F13E /* BannerView.swift */,
 				D6A4A3F726EFB93900E9F13E /* ContentView.swift */,
 				D6A4A3F926EFB93A00E9F13E /* Assets.xcassets */,
 				D6A4A3FE26EFB93A00E9F13E /* Info.plist */,
@@ -97,8 +98,8 @@
 		D6A4A40626EFC9C500E9F13E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6A4A40C26F136DC00E9F13E /* JsonForBanner.json */,
 				D6A4A40426EFC61800E9F13E /* BannerModel.swift */,
+				D6A4A41726F1791C00E9F13E /* CatalogModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +110,24 @@
 				D6A4A40826EFCA0200E9F13E /* BannerViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6A4A41526F1763800E9F13E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6A4A41126F1626600E9F13E /* ToastView.swift */,
+				D6A4A41326F1754C00E9F13E /* BannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6A4A41626F1765500E9F13E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D6A4A40C26F136DC00E9F13E /* JsonForBanner.json */,
+				D6A4A40A26EFCDDD00E9F13E /* APIManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		F6315E1FB36D8FC4CC7180FB /* Frameworks */ = {
@@ -245,6 +264,7 @@
 				D6A4A3F826EFB93900E9F13E /* ContentView.swift in Sources */,
 				D6A4A41226F1626600E9F13E /* ToastView.swift in Sources */,
 				D6A4A40526EFC61800E9F13E /* BannerModel.swift in Sources */,
+				D6A4A41826F1791C00E9F13E /* CatalogModel.swift in Sources */,
 				D6A4A40B26EFCDDD00E9F13E /* APIManager.swift in Sources */,
 				D6A4A41426F1754C00E9F13E /* BannerView.swift in Sources */,
 				D6A4A40926EFCA0200E9F13E /* BannerViewModel.swift in Sources */,
