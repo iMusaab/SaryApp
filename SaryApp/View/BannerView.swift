@@ -40,6 +40,7 @@ struct BannerView: View {
         .overlay(overlayView: ToastView(show: $showToastOverlay, banner: toastedBanner)
                 , show: $showToastOverlay)
             .onAppear {
+                CatalogViewModel().getCatalogs()
                 bannerViewModel.getBanners()
             }
         }

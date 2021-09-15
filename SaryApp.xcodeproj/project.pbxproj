@@ -20,6 +20,7 @@
 		D6A4A41226F1626600E9F13E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41126F1626600E9F13E /* ToastView.swift */; };
 		D6A4A41426F1754C00E9F13E /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41326F1754C00E9F13E /* BannerView.swift */; };
 		D6A4A41826F1791C00E9F13E /* CatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41726F1791C00E9F13E /* CatalogModel.swift */; };
+		D6A4A41A26F2A76800E9F13E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41926F2A76800E9F13E /* CatalogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D6A4A41126F1626600E9F13E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		D6A4A41326F1754C00E9F13E /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D6A4A41726F1791C00E9F13E /* CatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModel.swift; sourceTree = "<group>"; };
+		D6A4A41926F2A76800E9F13E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D6A4A40826EFCA0200E9F13E /* BannerViewModel.swift */,
+				D6A4A41926F2A76800E9F13E /* CatalogViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				D6A4A41426F1754C00E9F13E /* BannerView.swift in Sources */,
 				D6A4A40926EFCA0200E9F13E /* BannerViewModel.swift in Sources */,
 				D6A4A3F626EFB93900E9F13E /* SaryAppApp.swift in Sources */,
+				D6A4A41A26F2A76800E9F13E /* CatalogViewModel.swift in Sources */,
 				D6A4A40D26F136DC00E9F13E /* JsonForBanner.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

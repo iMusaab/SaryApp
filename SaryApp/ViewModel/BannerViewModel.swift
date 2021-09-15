@@ -16,7 +16,7 @@ class BannerViewModel: ObservableObject {
             switch result {
             case .success(let bannersfromJson):
                 self.banners = bannersfromJson?.result ?? [BannerResult]()
-                print("\(self.banners)")
+//                print("\(self.banners)")
                 
             case .failure(let error):
                 print("Error retriving data from JSON: \(error)")
