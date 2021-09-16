@@ -31,7 +31,7 @@ struct BannerView: View {
                     }
             }
         }.tabViewStyle(PageTabViewStyle())
-        .frame(width: proxy.size.width - 30, height: proxy.size.height / 4, alignment: .center)
+        .frame(width: proxy.size.width - 30, height: proxy.size.height , alignment: .center)
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .padding(.leading, 15)
         
@@ -45,7 +45,7 @@ struct BannerView: View {
                 bannerViewModel.getBanners()
             }
         }
-        .frame(height: UIScreen.main.bounds.size.height - 100, alignment: .center)
+        .frame(height: 200, alignment: .center)
     }
 }
 

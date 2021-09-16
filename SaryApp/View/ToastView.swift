@@ -17,21 +17,24 @@ struct ToastView: View {
             HStack {
                 Text(banner.description)
                     .font(.callout)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.trailing)
+                    .padding(.top)
+                
             }
             .padding(.horizontal)
             HStack {
                 Button(action: {
-//                    openURL(URL(string: banner.link)!)
+                    openURL(URL(string: banner.link)!)
                     
                 }, label: {
                     HStack {
-                        // The link doesnt work so i just showed it
-                        Text(banner.link)
+                        Text(banner.button_text)
                             .lineLimit(1)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.black)
                     }
-                            .padding(.vertical, 8)
+                            .padding(.vertical, 5)
                     .frame(width: UIScreen.main.bounds.width / 1.75)
                             .background(Color.white)
                             .cornerRadius(35)
@@ -51,13 +54,13 @@ struct ToastView: View {
                     Image(systemName: "xmark.circle" )
                         .foregroundColor(Color(#colorLiteral(red: 0.05882352941, green: 0.05882352941, blue: 0.05882352941, alpha: 1)))
                         .font(.system(size: 20, weight: .medium))
-                        .padding(5)
+                        .padding(.bottom)
                 })
                 
                     
             }
         }
-        .frame(width: UIScreen.main.bounds.width / 1.25)
+        .frame(width: UIScreen.main.bounds.width / 1.25, height: 100)
         .padding(.vertical, 40)
         .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.4549019608, green: 0.9490196078, blue: 0.8078431373, alpha: 1)), Color(#colorLiteral(red: 0.4862745098, green: 1, blue: 0.7960784314, alpha: 1))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(30)

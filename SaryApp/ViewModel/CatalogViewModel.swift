@@ -33,8 +33,8 @@ class CatalogViewModel: ObservableObject {
     @Published var bannerCatalogsData = [Datum]()
     
     @Published var smartCatalogs = CatalogResultViewModel()
-    @Published var groupCatalogs = [CatalogResultViewModel]()
-    @Published var bannerCatalogs = [CatalogResultViewModel]()
+    @Published var groupCatalogs = CatalogResultViewModel()
+    @Published var bannerCatalogs = CatalogResultViewModel()
     
     func getCatalogs() {
         APIManager.loadCatalogData { result in
@@ -42,7 +42,7 @@ class CatalogViewModel: ObservableObject {
             case .success(let catalog):
                 if let catalog = catalog {
                     self.filterCatalogResult(catalog: catalog)
-                    print(catalog.result)
+//                    print(catalog.result)
                 }
             case .failure(let error):
                 print("Failed decoding catalog data: \(error)")
@@ -58,11 +58,22 @@ class CatalogViewModel: ObservableObject {
         } else {
             print("error assigning smartType")
         }
-        print(smartCatalogs)
+        
+        if let groupType = catalog.result.first(where: { $0.title == "الاقسام" }) {
+            
+            groupCatalogs = CatalogResultViewModel(id: groupType.id, title: groupType.title, data: groupType.data.map{ CatalogDataViewModel(name: $0.name ?? "", image: $0.image)}, dataType: groupType.dataType, showTitle: groupType.showTitle, uiType: groupType.uiType, rowCount: groupType.rowCount)
+        } else {
+            print("error assigning groupType")
+        }
+        
+        if let bannerType = catalog.result.first(where: { $0.dataType == "banner" }) {
+            bannerCatalogs = CatalogResultViewModel(id: bannerType.id, title: bannerType.title, data: bannerType.data.map{ CatalogDataViewModel(name: $0.name ?? "", image: $0.image)}, dataType: bannerType.dataType, showTitle: bannerType.showTitle, uiType: bannerType.uiType, rowCount: bannerType.rowCount)
+        }
+        print(bannerCatalogs)
         
 //        for catalogResult in catalog.result {
-//            if catalogResult.dataType.contains("smart") {
-//                smartCatalogsData = catalogResult.data
+//            if catalogResult.dataType.contains("smart") {&& $0.title == "الاقسام"
+//                smartCatalogsData = catalogResult.data $0.dataType == "group" && $0.id == 9
 //            }
 //            if catalogResult.dataType.contains("group") && catalogResult.title == "الأقسام"{
 //                groupCatalogsData = catalogResult.data

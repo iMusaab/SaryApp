@@ -22,6 +22,9 @@
 		D6A4A41826F1791C00E9F13E /* CatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41726F1791C00E9F13E /* CatalogModel.swift */; };
 		D6A4A41A26F2A76800E9F13E /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41926F2A76800E9F13E /* CatalogViewModel.swift */; };
 		D6A4A41C26F2C0A200E9F13E /* SmartCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A4A41B26F2C0A200E9F13E /* SmartCatalogView.swift */; };
+		D6C64F0426F30C0E00EFF42C /* groupCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C64F0326F30C0E00EFF42C /* groupCatalogView.swift */; };
+		D6C64F0626F3280600EFF42C /* CatalogNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C64F0526F3280600EFF42C /* CatalogNavigationView.swift */; };
+		D6C64F0826F32BF000EFF42C /* BannerCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C64F0726F32BF000EFF42C /* BannerCatalogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		D6A4A41726F1791C00E9F13E /* CatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModel.swift; sourceTree = "<group>"; };
 		D6A4A41926F2A76800E9F13E /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		D6A4A41B26F2C0A200E9F13E /* SmartCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCatalogView.swift; sourceTree = "<group>"; };
+		D6C64F0326F30C0E00EFF42C /* groupCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupCatalogView.swift; sourceTree = "<group>"; };
+		D6C64F0526F3280600EFF42C /* CatalogNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogNavigationView.swift; sourceTree = "<group>"; };
+		D6C64F0726F32BF000EFF42C /* BannerCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCatalogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,9 @@
 				D6A4A41126F1626600E9F13E /* ToastView.swift */,
 				D6A4A41326F1754C00E9F13E /* BannerView.swift */,
 				D6A4A41B26F2C0A200E9F13E /* SmartCatalogView.swift */,
+				D6C64F0326F30C0E00EFF42C /* groupCatalogView.swift */,
+				D6C64F0726F32BF000EFF42C /* BannerCatalogView.swift */,
+				D6C64F0526F3280600EFF42C /* CatalogNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C64F0826F32BF000EFF42C /* BannerCatalogView.swift in Sources */,
+				D6C64F0426F30C0E00EFF42C /* groupCatalogView.swift in Sources */,
 				D6A4A3F826EFB93900E9F13E /* ContentView.swift in Sources */,
 				D6A4A41226F1626600E9F13E /* ToastView.swift in Sources */,
 				D6A4A40526EFC61800E9F13E /* BannerModel.swift in Sources */,
@@ -278,6 +289,7 @@
 				D6A4A3F626EFB93900E9F13E /* SaryAppApp.swift in Sources */,
 				D6A4A41A26F2A76800E9F13E /* CatalogViewModel.swift in Sources */,
 				D6A4A40D26F136DC00E9F13E /* JsonForBanner.json in Sources */,
+				D6C64F0626F3280600EFF42C /* CatalogNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

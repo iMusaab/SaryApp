@@ -11,14 +11,20 @@ import SDWebImageSwiftUI
 struct ContentView: View {
     
     var body: some View {
-        GeometryReader { proxy in
-            ScrollView(.vertical) {
-                VStack {
-                    BannerView()
-                    SmartCatalogView()
+        NavigationView {
+            GeometryReader { proxy in
+                ScrollView(.vertical) {
+                    VStack {
+                        BannerView()
+                            .padding(.vertical)
+                        SmartCatalogView()
+                            .padding(.vertical)
+                        groupCatalogView()
+                            .padding(.vertical)
+                    }
                 }
             }
-            .fixedSize(horizontal: false, vertical: true)
+            .navigationTitle(Text("ساري"))
         }
     }
 }

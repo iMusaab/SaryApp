@@ -12,6 +12,9 @@ struct SmartCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     
     let layout = [
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80)),
         GridItem(.adaptive(minimum: 80))
     ]
     
