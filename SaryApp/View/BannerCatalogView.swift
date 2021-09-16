@@ -12,25 +12,41 @@ struct BannerCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     
     private var columns: [GridItem] = [
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 2.1)),
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 2.1))
+        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
+        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
+        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
+        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4))
     ]
     
     var body: some View {
-        LazyVGrid(
-            columns: columns,
-            alignment: .center
-        ) {
-            ForEach(catalogViewModel.bannerCatalogs.data, id: \.self) { bannerCatalog in
-                NavigationLink(
-                    destination: CatalogNavigationView(imageURL: bannerCatalog.image),
-                    label: {
-                        WebImage(url: URL(string: bannerCatalog.image))
-                            .resizable()
-                            .scaledToFill()
-                    })
-                
+        VStack {
+            if catalogViewModel.bannerCatalogs.showTitle {
+                HStack {
+                    Spacer()
+                    Text(catalogViewModel.bannerCatalogs.title)
+                        .font(.title)
+                        .padding()
+                }
             }
+            
+            LazyVGrid(
+                columns: columns,
+                alignment: .center
+            ) {
+                ForEach(catalogViewModel.bannerCatalogs.data, id: \.self) { bannerCatalog in
+                    NavigationLink(
+                        destination: CatalogNavigationView(imageURL: bannerCatalog.image),
+                        label: {
+                            WebImage(url: URL(string: bannerCatalog.image))
+                                .resizable()
+                                .scaledToFill()
+                        })
+                    
+                }
+            }
+            .onAppear {
+                catalogViewModel.getCatalogs()
+        }
         }
     }
 }

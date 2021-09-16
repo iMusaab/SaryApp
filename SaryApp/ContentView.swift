@@ -21,6 +21,8 @@ struct ContentView: View {
                             .padding(.vertical)
                         groupCatalogView()
                             .padding(.vertical)
+                        BannerCatalogView()
+                            .padding(.vertical)
                     }
                 }
             }

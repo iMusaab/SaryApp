@@ -19,14 +19,16 @@ struct groupCatalogView: View {
     var body: some View {
         
         
-            VStack(alignment: .center) {
+        VStack(alignment: .center) {
+            if catalogViewModel.groupCatalogs.showTitle {
                 HStack {
                     Spacer()
                     Text(catalogViewModel.groupCatalogs.title)
                         .font(.title)
                         .padding()
                 }
-                LazyVGrid(
+            }
+            LazyVGrid(
                     columns: columns,
                     alignment: .center
                 ) {
