@@ -47,6 +47,6 @@ struct SmartCatalogView: View {
 
 struct SmartCatalogView_Previews: PreviewProvider {
     static var previews: some View {
-        SmartCatalogView()
+        SmartCatalogView().environment(\.layoutDirection, .rightToLeft)
     }
 }

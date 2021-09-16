@@ -22,10 +22,10 @@ struct BannerCatalogView: View {
         VStack {
             if catalogViewModel.bannerCatalogs.showTitle {
                 HStack {
-                    Spacer()
                     Text(catalogViewModel.bannerCatalogs.title)
                         .font(.title)
                         .padding()
+                    Spacer()
                 }
             }
             
@@ -53,6 +53,6 @@ struct BannerCatalogView: View {
 
 struct BannerCatalogView_Previews: PreviewProvider {
     static var previews: some View {
-        BannerCatalogView()
+        BannerCatalogView().environment(\.layoutDirection, .rightToLeft)
     }
 }

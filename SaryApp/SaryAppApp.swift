@@ -12,7 +12,7 @@ struct SaryAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.layoutDirection, .rightToLeft)
         }
     }
 }

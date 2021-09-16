@@ -51,7 +51,7 @@ struct BannerView: View {
 
 struct BannerView_Previews: PreviewProvider {
     static var previews: some View {
-        BannerView()
+        BannerView().environment(\.layoutDirection, .rightToLeft)
     }
 }
 

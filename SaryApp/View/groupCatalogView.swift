@@ -22,10 +22,11 @@ struct groupCatalogView: View {
         VStack(alignment: .center) {
             if catalogViewModel.groupCatalogs.showTitle {
                 HStack {
-                    Spacer()
+                    
                     Text(catalogViewModel.groupCatalogs.title)
                         .font(.title)
                         .padding()
+                    Spacer()
                 }
             }
             LazyVGrid(
@@ -53,6 +54,6 @@ struct groupCatalogView: View {
 
 struct groupCatalogView_Previews: PreviewProvider {
     static var previews: some View {
-        groupCatalogView()
+        groupCatalogView().environment(\.layoutDirection, .rightToLeft)
     }
 }
