@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - This class linking the model with viewmodel
 class BannerViewModel: ObservableObject {
     private var jsonManager: BannerJSON = BannerJSON()
     @Published var banners = [BannerResult]()
@@ -16,7 +17,6 @@ class BannerViewModel: ObservableObject {
             switch result {
             case .success(let bannersfromJson):
                 self.banners = bannersfromJson?.result ?? [BannerResult]()
-//                print("\(self.banners)")
                 
             case .failure(let error):
                 print("Error retriving data from JSON: \(error)")

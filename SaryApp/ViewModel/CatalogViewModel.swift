@@ -7,15 +7,15 @@
 
 import Foundation
 
+// MARK: - This struct is for the catalog data view model, I added an id to use foreach with it
 struct CatalogDataViewModel: Hashable, Identifiable {
     let id = UUID()
-    
     var name: String
     var image: String
 }
 
+// MARK: - This struct is for storing the result for differen types of catalogs in a viewmodel to be accessed by the view
 struct CatalogResultViewModel {
-    
     var id: Int = 0
     var title: String = ""
     var data: [CatalogDataViewModel] = []
@@ -25,24 +25,23 @@ struct CatalogResultViewModel {
     var rowCount: Int = 1
 }
 
+// MARK: - This class is handling the link between model, api and view
 class CatalogViewModel: ObservableObject {
     private var APIManager: Api = Api()
-    
-    @Published var smartCatalogsData: [CatalogDataViewModel] = []
-    @Published var groupCatalogsData = [Datum]()
-    @Published var bannerCatalogsData = [Datum]()
     
     @Published var smartCatalogs = CatalogResultViewModel()
     @Published var groupCatalogs = CatalogResultViewModel()
     @Published var bannerCatalogs = CatalogResultViewModel()
     
+    
+// MARK: - This function loads all the catalogs from the API
     func getCatalogs() {
         APIManager.loadCatalogData { result in
             switch result {
             case .success(let catalog):
                 if let catalog = catalog {
                     self.filterCatalogResult(catalog: catalog)
-//                    print(catalog.result)
+                    //                    print(catalog.result)
                 }
             case .failure(let error):
                 print("Failed decoding catalog data: \(error)")
@@ -50,10 +49,10 @@ class CatalogViewModel: ObservableObject {
         }
     }
     
+// MARK: - This function filters the result from the API into different types
     func filterCatalogResult(catalog: Catalog) {
         
         if let smartType = catalog.result.first(where: { $0.dataType == "smart" }) {
-//            smartCatalogsData = smartType.data.map{ CatalogDataViewModel(name: $0.name ?? "", image: $0.image)}
             smartCatalogs = CatalogResultViewModel(id: smartType.id, title: smartType.title, data: smartType.data.map{ CatalogDataViewModel(name: $0.name ?? "", image: $0.image)}, dataType: smartType.dataType, showTitle: smartType.showTitle, uiType: smartType.uiType, rowCount: smartType.rowCount)
         } else {
             print("error assigning smartType")
@@ -71,6 +70,11 @@ class CatalogViewModel: ObservableObject {
         }
         print(bannerCatalogs)
         
+    }
+}
+
+
+
 //        for catalogResult in catalog.result {
 //            if catalogResult.dataType.contains("smart") {&& $0.title == "الاقسام"
 //                smartCatalogsData = catalogResult.data $0.dataType == "group" && $0.id == 9
@@ -95,8 +99,3 @@ class CatalogViewModel: ObservableObject {
 //        bannerCatalogs = catalog.result.filter({ result in
 //            return result.dataType.contains("banner")
 //        })
-        
-    }
-}
-
-

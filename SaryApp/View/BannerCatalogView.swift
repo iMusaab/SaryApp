@@ -8,6 +8,8 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This view is for the Banner Catalogs third level
+
 struct BannerCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     

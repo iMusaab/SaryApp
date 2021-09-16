@@ -8,6 +8,8 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This view is for the banners on top with thier sliding
+
 struct BannerView: View {
     @ObservedObject private var bannerViewModel = BannerViewModel()
     @State var selectedTab = 0
@@ -41,7 +43,6 @@ struct BannerView: View {
         .overlay(overlayView: ToastView(show: $showToastOverlay, banner: toastedBanner)
                 , show: $showToastOverlay)
             .onAppear {
-                CatalogViewModel().getCatalogs()
                 bannerViewModel.getBanners()
             }
         }

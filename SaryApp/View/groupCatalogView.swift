@@ -8,6 +8,8 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This view is for the group Catalogs second level
+
 struct groupCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     

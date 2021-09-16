@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - This view is for the toast view with its animation 
 struct ToastView: View {
     @Binding var show: Bool
     var banner: BannerResult

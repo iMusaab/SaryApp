@@ -8,6 +8,8 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This view is for the Smart Catalogs first level
+
 struct SmartCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     

@@ -8,6 +8,8 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This view is for the navigation view when pressing catalog items
+
 struct CatalogNavigationView: View {
     var imageURL: String
     

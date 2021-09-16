@@ -8,7 +8,11 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// MARK: - This is the main view grouping all views in one page
+
 struct ContentView: View {
+    @ObservedObject private var bannerViewModel = BannerViewModel()
+    @ObservedObject private var catalogViewModel = CatalogViewModel()
     
     var body: some View {
         NavigationView {
@@ -27,6 +31,10 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(Text("ساري"))
+            .onAppear {
+                bannerViewModel.getBanners()
+                catalogViewModel.getCatalogs()
+            }
         }
     }
 }
