@@ -11,24 +11,21 @@ import SDWebImageSwiftUI
 struct ContentView: View {
     
     var body: some View {
-       BannerView()
+        GeometryReader { proxy in
+            ScrollView(.vertical) {
+                VStack {
+                    BannerView()
+                    SmartCatalogView()
+                }
+            }
+            .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @State static var showToast = false
     static var previews: some View {
-        ContentView()
-            .onAppear {
-                Api().loadCatalogData { result in
-                    switch result {
-                    case .success(let catalog):
-                        print("data decoded: \(catalog)")
-                    case .failure(let error):
-                        print("Failed decoding: \(error)")
-                    }
-                }
-            }
+                ContentView()
     }
 }
 

@@ -69,10 +69,11 @@ struct CatalogResult: Codable {
 
 // MARK: - Datum
 struct Datum: Codable {
+    
     let groupID: Int?
     let filters: [Filter]?
     let name: String?
-    let image: String
+    let image: String 
     let emptyContentImage: String?
     let emptyContentMessage: String?
     let hasData, showUnavailableItems, showInBrochureLink: Bool?

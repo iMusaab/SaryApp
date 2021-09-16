@@ -34,6 +34,7 @@ struct BannerView: View {
         .frame(width: proxy.size.width - 30, height: proxy.size.height / 4, alignment: .center)
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .padding(.leading, 15)
+        
 //        .onChange(of: selectedTab) { newValue in
 //                    model.myFunction(item: newValue)
 //                }
@@ -44,6 +45,7 @@ struct BannerView: View {
                 bannerViewModel.getBanners()
             }
         }
+        .frame(height: UIScreen.main.bounds.size.height - 100, alignment: .center)
     }
 }
 
