@@ -1,6 +1,6 @@
 # SaryApp
 
-![Alt Text](https://giphy.com/embed/wUsxOSOuL8OaWbGG6T/giphy.gif)
+![Gif for the app](https://media.giphy.com/media/wUsxOSOuL8OaWbGG6T/giphy.gif?cid=790b7611dc12ff82dd2b172169fd7dea5f09d07bee85b828&rid=giphy.gif&ct=g)
 
 Key information regarding my assignment:
 
