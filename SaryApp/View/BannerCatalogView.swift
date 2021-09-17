@@ -13,11 +13,10 @@ import SDWebImageSwiftUI
 struct BannerCatalogView: View {
     @ObservedObject private var catalogViewModel = CatalogViewModel()
     
-    private var columns: [GridItem] = [
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
-        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4))
+    private var layout: [GridItem] = [
+        GridItem(.fixed(UIScreen.main.bounds.size.width / 5))
+//        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4)),
+//        GridItem(.fixed(UIScreen.main.bounds.size.width / 4.4))
     ]
     
     var body: some View {
@@ -31,30 +30,33 @@ struct BannerCatalogView: View {
                 }
             }
             
-            LazyVGrid(
-                columns: columns,
-                alignment: .center
-            ) {
-                ForEach(catalogViewModel.bannerCatalogs.data, id: \.self) { bannerCatalog in
-                    NavigationLink(
-                        destination: CatalogNavigationView(imageURL: bannerCatalog.image),
-                        label: {
-                            WebImage(url: URL(string: bannerCatalog.image))
-                                .resizable()
-                                .scaledToFill()
-                        })
-                    
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack() {
+                    ForEach(catalogViewModel.bannerCatalogs.data, id: \.self) { bannerCatalog in
+                        NavigationLink(
+                            destination: CatalogNavigationView(imageURL: bannerCatalog.image),
+                            label: {
+                                WebImage(url: URL(string: bannerCatalog.image))
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.size.width / 5, height: UIScreen.main.bounds.size.width / 5)
+                                    .rotation3DEffect(Angle(degrees: 180), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
+                            }).padding(.horizontal, 5)
+                    }
                 }
             }
-            .onAppear {
-                catalogViewModel.getCatalogs()
+            
+            .frame(height: UIScreen.main.bounds.size.width / 4, alignment: .center)
+            .flipsForRightToLeftLayoutDirection(true)
         }
+        .onAppear {
+            catalogViewModel.getCatalogs()
         }
     }
 }
 
 struct BannerCatalogView_Previews: PreviewProvider {
     static var previews: some View {
-        BannerCatalogView().environment(\.layoutDirection, .rightToLeft)
+        BannerCatalogView()
     }
 }
