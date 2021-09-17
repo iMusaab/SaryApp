@@ -1,6 +1,6 @@
 # SaryApp
 
-<iframe src="https://giphy.com/embed/wUsxOSOuL8OaWbGG6T" width="222" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/wUsxOSOuL8OaWbGG6T">via GIPHY</a></p>
+![Alt Text](https://giphy.com/embed/wUsxOSOuL8OaWbGG6T/giphy.gif)
 
 Key information regarding my assignment:
 
